@@ -93,7 +93,7 @@ GetRemainingSpaceInPhoneList:
 
 INCLUDE "data/phone/permanent_numbers.asm"
 
-BrokenPlaceFarString:
+BrokenPlaceFarString: ; unused
 ; This routine is not in bank 0 and will fail or crash if called.
 	ldh a, [hROMBank]
 	push af
@@ -498,13 +498,12 @@ PhoneCall::
 	ld [hl], "☎"
 	inc hl
 	inc hl
-	ld a, [wPhoneScriptBank]
-	ld b, a
 	ld a, [wPhoneCaller]
 	ld e, a
 	ld a, [wPhoneCaller + 1]
 	ld d, a
-	call BrokenPlaceFarString
+	ld a, [wPhoneScriptBank]
+	call PlaceFarString
 	ret
 
 Phone_NoSignal:
