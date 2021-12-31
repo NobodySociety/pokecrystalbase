@@ -9,3 +9,5 @@ A base rom for me to use.
 # Design Flaws: 
 
 * All listed in the **Design Flaws Doc** [https://github.com/pret/pokecrystal/blob/master/docs/design_flaws.md] as of 12/31/2021
+
+# Semi Complete Decap
