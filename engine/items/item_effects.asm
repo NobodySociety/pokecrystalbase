@@ -194,7 +194,7 @@ ItemEffects:
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; ITEM_B3
 	assert_table_length ITEM_B3
-; The items past ITEM_B3 do not have effect entries:
+; The items past ITEM_DC do not have effect entries:
 ;	BRICK_PIECE
 ;	SURF_MAIL
 ;	LITEBLUEMAIL
@@ -206,6 +206,8 @@ ItemEffects:
 ;	MUSIC_MAIL
 ;	MIRAGE_MAIL
 ;	ITEM_BE
+;   ITEM_C3
+;   ITEM_DC
 ; They all have the ITEMMENU_NOUSE attribute so they can't be used anyway.
 ; NoEffect would be appropriate, with the table then being NUM_ITEMS long.
 
@@ -746,29 +748,6 @@ ParkBallMultiplier:
 	ld b, $ff
 	ret
 
-GetPokedexEntryBank:
-	push hl
-	push de
-	ld a, [wEnemyMonSpecies]
-	dec a
-	rlca
-	rlca
-	maskbits NUM_DEX_ENTRY_BANKS
-	ld hl, .PokedexEntryBanks
-	ld d, 0
-	ld e, a
-	add hl, de
-	ld a, [hl]
-	pop de
-	pop hl
-	ret
-
-.PokedexEntryBanks:
-	db BANK("Pokedex Entries 001-064")
-	db BANK("Pokedex Entries 065-128")
-	db BANK("Pokedex Entries 129-192")
-	db BANK("Pokedex Entries 193-251")
-
 HeavyBallMultiplier:
 ; subtract 20 from catch rate if weight < 102.4 kg
 ; else add 0 to catch rate if weight < 204.8 kg
@@ -782,17 +761,24 @@ HeavyBallMultiplier:
 	ld d, 0
 	add hl, de
 	add hl, de
+	add hl, de
+	; d = bank, hl = address
+	ld a, BANK(PokedexDataPointerTable)
+	call GetFarByte
+	push af
+	inc hl
 	ld a, BANK(PokedexDataPointerTable)
 	call GetFarWord
+	pop de
 
 .SkipText:
-	call GetPokedexEntryBank
+	ld a, d
 	call GetFarByte
 	inc hl
 	cp "@"
 	jr nz, .SkipText
 
-	call GetPokedexEntryBank
+	ld a, d
 	push bc
 	inc hl
 	inc hl
