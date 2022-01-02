@@ -17,3 +17,4 @@ A base rom for me to use.
 * Fourth Stats Page
 * Physical/Special Split
 * Remove the 25% failure chance for AI status moves
+* Don't gain experience at level 100
