@@ -900,7 +900,7 @@ MoveScreenLoop:
 .moving_move
 	ld a, " "
 	hlcoord 1, 11
-	ld bc, 5
+	ld bc, 8
 	call ByteFill
 	hlcoord 1, 12
 	lb bc, 5, SCREEN_WIDTH - 2
@@ -1177,12 +1177,20 @@ PlaceMoveData:
 	hlcoord 0, 11
 	ld de, String_MoveType_Bottom
 	call PlaceString
-	hlcoord 12, 12
+	hlcoord 10, 12
 	ld de, String_MoveAtk
 	call PlaceString
 	ld a, [wCurSpecies]
 	ld b, a
-	hlcoord 2, 12
+	farcall GetMoveCategoryName
+	hlcoord 1, 11
+	ld de, wStringBuffer1
+	call PlaceString
+	ld a, [wCurSpecies]
+	ld b, a
+	hlcoord 1, 12
+	ld [hl], "/"
+	inc hl
 	predef PrintMoveType
 	ld a, [wCurSpecies]
 	dec a
@@ -1191,18 +1199,50 @@ PlaceMoveData:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	hlcoord 16, 12
+	hlcoord 11, 12
 	cp 2
 	jr c, .no_power
 	ld [wTextDecimalByte], a
 	ld de, wTextDecimalByte
 	lb bc, 1, 3
 	call PrintNum
-	jr .description
+	jr .place_accuracy
 
 .no_power
 	ld de, String_MoveNoPower
 	call PlaceString
+	
+.place_accuracy
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_ACC
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	; convert internal accuracy representation to a number
+	; between 0-100
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld [hMultiplicand], a
+	ld a, 100
+	ld [hMultiplier], a
+	call Multiply
+	ld a, [hProduct]
+	; don't increase a for 0% moves
+	and a
+	jr z, .no_inc
+	inc a
+.no_inc
+	hlcoord 16, 12
+	cp 2
+	jr c, .no_acc
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3
+	call PrintNum
+	jr .description
+.no_acc
+	ld de, String_MoveNoPower
+	call PlaceString	
 
 .description
 	hlcoord 1, 14
@@ -1212,11 +1252,11 @@ PlaceMoveData:
 	ret
 
 String_MoveType_Top:
-	db "┌─────┐@"
+	db "┌────────┐@"
 String_MoveType_Bottom:
-	db "│TYPE/└@"
+	db "│        └@"
 String_MoveAtk:
-	db "ATK/@"
+	db "P   /A   @"
 String_MoveNoPower:
 	db "---@"
 
