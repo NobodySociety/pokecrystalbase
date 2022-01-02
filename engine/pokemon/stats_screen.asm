@@ -483,19 +483,6 @@ StatsScreen_InitUpperHalf:
 	dw sBoxMonNicknames
 	dw wBufferMonNickname
 
-StatsScreen_PlaceVerticalDivider: ; unreferenced
-; The Japanese stats screen has a vertical divider.
-	hlcoord 7, 0
-	ld bc, SCREEN_WIDTH
-	ld d, SCREEN_HEIGHT
-.loop
-	ld a, $31 ; vertical divider
-	ld [hl], a
-	add hl, bc
-	dec d
-	jr nz, .loop
-	ret
-
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
 	ld b, SCREEN_WIDTH
@@ -747,9 +734,6 @@ LoadGreenPage:
 	ld a, [wTempMonItem]
 	and a
 	ret z
-	ld b, a
-	farcall TimeCapsule_ReplaceTeruSama
-	ld a, b
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	ret
@@ -983,9 +967,6 @@ StatsScreen_LoadTextboxSpaceGFX:
 	pop de
 	pop hl
 	ret
-
-StatsScreenSpaceGFX: ; unreferenced
-INCBIN "gfx/font/space.2bpp"
 
 EggStatsScreen:
 	xor a

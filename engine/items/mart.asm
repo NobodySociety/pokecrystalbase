@@ -723,12 +723,6 @@ SellMenu:
 	and a
 	ret
 
-.NothingToSell: ; unreferenced
-	ld hl, .NothingToSellText
-	call MenuTextboxBackup
-	and a
-	ret
-
 .NothingToSellText:
 	text_far _NothingToSellText
 	text_end
@@ -805,9 +799,6 @@ MartSellPriceText:
 	text_far _MartSellPriceText
 	text_end
 
-UnusedDummyString: ; unreferenced
-	db "！ダミー！@" ; "!Dummy!"
-
 MartWelcomeText:
 	text_far _MartWelcomeText
 	text_end
@@ -821,9 +812,9 @@ MenuHeader_BuySell:
 .MenuData
 	db STATICMENU_CURSOR ; strings
 	db 3 ; items
-	db "BUY@"
-	db "SELL@"
-	db "QUIT@"
+	db "Buy@"
+	db "Sell@"
+	db "Quit@"
 
 MartThanksText:
 	text_far _MartThanksText

@@ -1318,7 +1318,7 @@ BattleAnim_RazorWind:
 	anim_wait 24
 	anim_ret
 
-BattleAnim_Sonicboom_JP: ; unreferenced
+BattleAnim_Sonicboom_JP: ;
 	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
 .loop
 	anim_sound 3, 0, SFX_RAZOR_WIND

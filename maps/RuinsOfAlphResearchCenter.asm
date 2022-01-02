@@ -163,12 +163,8 @@ RuinsOfAlphResearchCenterPrinter:
 .PrinterAvailable:
 	writetext RuinsOfAlphResearchCenterUnownPrinterText
 	waitbutton
-	special UnownPrinter
 	closetext
 	end
-
-RuinsOfAlphResearchCenterPhoto: ; unreferenced
-	jumptext RuinsOfAlphResearchCenterProfSilktreePhotoText
 
 RuinsOfAlphResearchCenterBookshelf:
 	jumptext RuinsOfAlphResearchCenterAcademicBooksText

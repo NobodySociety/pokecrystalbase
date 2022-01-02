@@ -502,7 +502,6 @@ wCurEnemyMoveNum:: db
 wEnemyHPAtTimeOfPlayerSwitch:: dw
 wPayDayMoney:: ds 3
 
-wSafariMonAngerCount:: db ; unreferenced
 wSafariMonEating:: db
 	ds 1
 wEnemyBackupDVs:: dw ; used when enemy is transformed
@@ -860,28 +859,11 @@ wOverworldMapBlocksEnd::
 
 SECTION UNION "Overworld Map", WRAM0
 
-; GB Printer data
-wGameboyPrinterRAM::
-wGameboyPrinter2bppSource:: ds 40 tiles
-wGameboyPrinter2bppSourceEnd::
-wUnusedGameboyPrinterSafeCancelFlag:: db
-wPrinterRowIndex:: db
-
-; Printer data
-wPrinterData:: ds 4
-wPrinterChecksum:: dw
-wPrinterHandshake:: db
-wPrinterStatusFlags::
-; bit 7: set if error 1 (battery low)
-; bit 6: set if error 4 (too hot or cold)
-; bit 5: set if error 3 (paper jammed or empty)
-; if this and the previous byte are both $ff: error 2 (connection error)
-	db
+	ds 122
 
 wHandshakeFrameDelay:: db
-wPrinterSerialFrameDelay:: db
-wPrinterSendByteOffset:: dw
-wPrinterSendByteCounter:: dw
+
+	ds 6
 
 ; tilemap backup?
 wPrinterTilemapBuffer:: ds SCREEN_HEIGHT * SCREEN_WIDTH
@@ -960,26 +942,6 @@ wLinkPlayerPartyMonNicknames::
 ; wLinkPlayerPartyMon1Nickname - wLinkPlayerPartyMon6Nickname
 for n, 1, PARTY_LENGTH + 1
 wLinkPlayerPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
-endr
-
-NEXTU
-; time capsule party data
-wTimeCapsulePlayerData::
-; wTimeCapsulePartyMon1 - wTimeCapsulePartyMon6
-for n, 1, PARTY_LENGTH + 1
-wTimeCapsulePartyMon{d:n}:: red_party_struct wTimeCapsulePartyMon{d:n}
-endr
-
-wTimeCapsulePartyMonOTs::
-; wTimeCapsulePartyMon1OT - wTimeCapsulePartyMon6OT
-for n, 1, PARTY_LENGTH + 1
-wTimeCapsulePartyMon{d:n}OT:: ds NAME_LENGTH
-endr
-
-wTimeCapsulePartyMonNicknames::
-; wTimeCapsulePartyMon1Nickname - wTimeCapsulePartyMon6Nickname
-for n, 1, PARTY_LENGTH + 1
-wTimeCapsulePartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 
 NEXTU
@@ -3010,7 +2972,6 @@ wFarfetchdPosition:: db
 wPokecenter2FSceneID::                            db
 wTradeCenterSceneID::                             db
 wColosseumSceneID::                               db
-wTimeCapsuleSceneID::                             db
 wPowerPlantSceneID::                              db
 wCeruleanGymSceneID::                             db
 wRoute25SceneID::                                 db
@@ -3087,11 +3048,11 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+	ds 50
 
 ; fight counts
 wJackFightCount::    db
-wBeverlyFightCount:: db ; unreferenced
+	ds 1
 wHueyFightCount::    db
 wGavenFightCount::   db
 wBethFightCount::    db
@@ -3104,18 +3065,18 @@ wLizFightCount::     db
 wAnthonyFightCount:: db
 wToddFightCount::    db
 wGinaFightCount::    db
-wIrwinFightCount::   db ; unreferenced
+	ds 1
 wArnieFightCount::   db
 wAlanFightCount::    db
 wDanaFightCount::    db
 wChadFightCount::    db
-wDerekFightCount::   db ; unreferenced
+	ds 1
 wTullyFightCount::   db
 wBrentFightCount::   db
 wTiffanyFightCount:: db
 wVanceFightCount::   db
 wWiltonFightCount::  db
-wKenjiFightCount::   db ; unreferenced
+	ds 1
 wParryFightCount::   db
 wErinFightCount::    db
 

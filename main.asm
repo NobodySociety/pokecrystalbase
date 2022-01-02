@@ -67,7 +67,6 @@ INCLUDE "engine/events/std_collision.asm"
 INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
-INCLUDE "engine/pokemon/correct_party_errors.asm"
 INCLUDE "engine/math/get_square_root.asm"
 
 
@@ -85,8 +84,6 @@ INCLUDE "engine/events/money.asm"
 INCLUDE "data/items/marts.asm"
 INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/events/daycare.asm"
-INCLUDE "engine/events/print_unown.asm"
-INCLUDE "engine/events/print_photo.asm"
 INCLUDE "engine/pokemon/breeding.asm"
 
 
@@ -241,7 +238,6 @@ INCLUDE "engine/events/basement_key.asm"
 INCLUDE "engine/events/sacred_ash.asm"
 INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
-INCLUDE "engine/battle/getgen1trainerclassname.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
 INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
@@ -250,7 +246,6 @@ INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
-INCLUDE "data/pokemon/unused_pic_banks.asm"
 
 
 SECTION "Crystal Phone Text", ROMX
@@ -282,8 +277,6 @@ INCLUDE "engine/debug/color_picker.asm"
 
 SECTION "bank21", ROMX
 
-INCLUDE "engine/printer/printer_serial.asm"
-INCLUDE "engine/printer/printer.asm"
 INCLUDE "gfx/battle_anims.asm"
 INCLUDE "engine/events/halloffame.asm"
 
@@ -454,7 +447,6 @@ INCLUDE "gfx/pokemon/unown_frames.asm"
 
 SECTION "bank38", ROMX
 
-INCLUDE "engine/events/print_unown_2.asm"
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
 INCLUDE "engine/games/memory_game.asm"
@@ -471,15 +463,14 @@ INCLUDE "engine/movie/intro.asm"
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
-INCLUDE "engine/link/time_capsule.asm"
 INCLUDE "engine/events/name_rater.asm"
 INCLUDE "engine/events/play_slow_cry.asm"
 INCLUDE "engine/pokedex/new_pokedex_entry.asm"
-INCLUDE "engine/link/time_capsule_2.asm"
 INCLUDE "engine/pokedex/unown_dex.asm"
 INCLUDE "engine/events/magikarp.asm"
 INCLUDE "engine/battle/hidden_power.asm"
 INCLUDE "engine/battle/misc.asm"
+INCLUDE "engine/link/link_trade_2.asm"
 
 
 SECTION "bank3F", ROMX
@@ -512,7 +503,6 @@ INCLUDE "mobile/mobile_42.asm"
 
 SECTION "Title", ROMX
 
-INCLUDE "engine/movie/unused_title.asm"
 INCLUDE "engine/movie/title.asm"
 
 
@@ -642,7 +632,7 @@ INCLUDE "engine/overworld/landmarks.asm"
 
 SECTION "Print Party", ROMX
 
-INCLUDE "engine/printer/print_party.asm"
+; This is now empty
 
 
 SECTION "bank77", ROMX

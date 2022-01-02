@@ -128,7 +128,7 @@ TrainerCard_Page1_Joypad:
 	ld [wJumptableIndex], a
 	ret
 
-.KantoBadgeCheck: ; unreferenced
+.KantoBadgeCheck: ;
 	ld a, [wKantoBadges]
 	and a
 	ret z
@@ -171,7 +171,7 @@ TrainerCard_Page2_Joypad:
 	ld [wJumptableIndex], a
 	ret
 
-.KantoBadgeCheck: ; unreferenced
+.KantoBadgeCheck: ;
 	ld a, [wKantoBadges]
 	and a
 	ret z
@@ -295,9 +295,6 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 .Dex_PlayTime:
 	db   "#dex"
 	next "Play Time@"
-
-.Unused: ; unreferenced
-	db "@"
 
 .Badges:
 	db "  Badges▶@"

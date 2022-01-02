@@ -30,13 +30,13 @@ GameFreakGameDesignerScript:
 	writetext GameFreakGameDesignerAfterDiplomaText
 	waitbutton
 	closetext
-	setevent EVENT_ENABLE_DIPLOMA_PRINTING
+	setevent EVENT_UNUSED
 	end
 
 GameFreakGraphicArtistScript:
 	faceplayer
 	opentext
-	checkevent EVENT_ENABLE_DIPLOMA_PRINTING
+	checkevent EVENT_UNUSED
 	iftrue .CanPrintDiploma
 	writetext GameFreakGraphicArtistText
 	waitbutton
@@ -47,18 +47,11 @@ GameFreakGraphicArtistScript:
 	writetext GameFreakGraphicArtistPrintDiplomaText
 	yesorno
 	iffalse .Refused
-	special PrintDiploma
 	closetext
 	end
 
 .Refused:
 	writetext GameFreakGraphicArtistRefusedText
-	waitbutton
-	closetext
-	end
-
-.CancelPrinting: ; unreferenced
-	writetext GameFreakGraphicArtistErrorText
 	waitbutton
 	closetext
 	end

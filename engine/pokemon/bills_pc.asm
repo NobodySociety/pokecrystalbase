@@ -101,11 +101,6 @@ _DepositPKMN:
 	ld [wJumptableIndex], a
 	ret
 
-.go_back ; unreferenced
-	ld hl, wJumptableIndex
-	dec [hl]
-	ret
-
 .b_button
 	ld a, $4
 	ld [wJumptableIndex], a
@@ -239,21 +234,6 @@ BillsPCDepositMenuHeader:
 	db "Release@"
 	db "Cancel@"
 
-BillsPCClearThreeBoxes: ; unreferenced
-	hlcoord 0, 0
-	ld b, 4
-	ld c, 8
-	call ClearBox
-	hlcoord 0, 4
-	ld b, 10
-	ld c, 9
-	call ClearBox
-	hlcoord 0, 14
-	ld b, 2
-	ld c, 8
-	call ClearBox
-	ret
-
 _WithdrawPKMN:
 	ld hl, wOptions
 	ld a, [hl]
@@ -356,11 +336,6 @@ _WithdrawPKMN:
 	jr z, .b_button
 	ld a, $2
 	ld [wJumptableIndex], a
-	ret
-
-.go_back ; unreferenced
-	ld hl, wJumptableIndex
-	dec [hl]
 	ret
 
 .b_button
@@ -607,11 +582,6 @@ _MovePKMNWithoutMail:
 	jr z, .b_button
 	ld a, $2
 	ld [wJumptableIndex], a
-	ret
-
-.go_back ; unreferenced
-	ld hl, wJumptableIndex
-	dec [hl]
 	ret
 
 .b_button
@@ -1540,22 +1510,6 @@ endr
 	dbsprite 19, 4, 0, 7, $07, 0
 	db -1
 
-BillsPC_FillBox: ; unreferenced
-.row
-	push bc
-	push hl
-.col
-	ld [hli], a
-	dec c
-	jr nz, .col
-	pop hl
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .row
-	ret
-
 BillsPC_CheckSpaceInDestination:
 ; If moving within a box, no need to be here.
 	ld hl, wBillsPC_LoadedBox
@@ -2223,7 +2177,6 @@ PCString_ReleasedPKMN: db "Released <PK><MN>.@"
 PCString_Bye: db "Bye,@"
 PCString_Stored: db "Stored @"
 PCString_Got: db "Got @"
-PCString_Non: db "Non.@" ; unreferenced
 PCString_BoxFull: db "The Box is full.@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing Eggs!@"
@@ -2416,22 +2369,6 @@ BillsPC_ChangeBoxSubmenu:
 	jr z, .Switch
 	cp $2
 	jr z, .Name
-	cp $3
-	jr z, .Print
-	and a
-	ret
-
-.Print:
-	call GetBoxCount
-	and a
-	jr z, .EmptyBox
-	ld e, l
-	ld d, h
-	ld a, [wMenuSelection]
-	dec a
-	ld c, a
-	farcall PrintPCBox
-	call BillsPC_ClearTilemap
 	and a
 	ret
 
@@ -2472,20 +2409,17 @@ BillsPC_ChangeBoxSubmenu:
 	call CopyName2
 	ret
 
-	hlcoord 11, 7 ; unreferenced
-
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 11, 4, SCREEN_WIDTH - 1, 13
+	menu_coords 11, 4, SCREEN_WIDTH - 1, 11
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 4 ; items
+	db 3 ; items
 	db "Switch@"
 	db "Name@"
-	db "Print@"
 	db "Quit@"
 
 BillsPC_PlaceChooseABoxString:

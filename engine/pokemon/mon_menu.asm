@@ -472,12 +472,8 @@ ComposeMailMessage:
 	ret
 
 MonMailAction:
-; If in the time capsule or trade center,
-; selecting the mail only allows you to
-; read the mail.
+; If in the trade center, selecting the mail only allows you to read the mail.
 	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jr z, .read
 	cp LINK_TRADECENTER
 	jr z, .read
 
@@ -624,10 +620,6 @@ MonMenu_Fly:
 
 .Error:
 	ld a, $0
-	ret
-
-.NoReload: ; unreferenced
-	ld a, $1
 	ret
 
 MonMenu_Flash:

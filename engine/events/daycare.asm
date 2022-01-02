@@ -166,10 +166,6 @@ DayCareAskDepositPokemon:
 	scf
 	ret
 
-.DaycareDummyText: ; unreferenced
-	text_far _DaycareDummyText
-	text_end
-
 DayCare_DepositPokemonText:
 	ld a, DAYCARETEXT_DEPOSIT
 	call PrintDayCareText
@@ -543,9 +539,7 @@ DayCare_InitBreeding:
 	cp 150
 	jr c, .loop
 	ld [wStepsToEgg], a
-	jp .UselessJump
 
-.UselessJump:
 	xor a
 	ld hl, wEggMon
 	ld bc, BOXMON_STRUCT_LENGTH

@@ -93,7 +93,7 @@ NameRival:
 	ret
 
 .DefaultName:
-	db "SILVER@"
+	db "Silver@"
 
 NameRater:
 	farcall _NameRater
@@ -102,12 +102,6 @@ NameRater:
 OverworldTownMap:
 	call FadeToMenu
 	farcall _TownMap
-	call ExitAllMenus
-	ret
-
-UnownPrinter:
-	call FadeToMenu
-	farcall _UnownPrinter
 	call ExitAllMenus
 	ret
 
@@ -408,12 +402,6 @@ FadeOutMusic:
 Diploma:
 	call FadeToMenu
 	farcall _Diploma
-	call ExitAllMenus
-	ret
-
-PrintDiploma:
-	call FadeToMenu
-	farcall _PrintDiploma
 	call ExitAllMenus
 	ret
 

@@ -154,10 +154,6 @@ EvolveAfterBattle_MasterLoop:
 	inc a
 	jr z, .proceed
 
-	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jp z, .dont_evolve_3
-
 	ld a, [wTempMonItem]
 	cp b
 	jp nz, .dont_evolve_3
@@ -327,8 +323,6 @@ EvolveAfterBattle_MasterLoop:
 	inc hl
 	jp .loop
 
-.UnusedReturnToMap: ; unreferenced
-	pop hl
 .ReturnToMap:
 	pop de
 	pop bc

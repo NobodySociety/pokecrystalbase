@@ -19,12 +19,8 @@ SpecialsPointers::
 	add_special CloseLink
 	add_special WaitForOtherPlayerToExit
 	add_special SetBitsForBattleRequest
-	add_special SetBitsForTimeCapsuleRequest
-	add_special CheckTimeCapsuleCompatibility
-	add_special EnterTimeCapsule
 	add_special TradeCenter
 	add_special Colosseum
-	add_special TimeCapsule
 	add_special CableClubCheckWhichChris
 	add_special CheckMysteryGift
 	add_special GetMysteryGiftItem
@@ -50,7 +46,6 @@ SpecialsPointers::
 	add_special NameRival
 	add_special SetDayOfWeek
 	add_special OverworldTownMap
-	add_special UnownPrinter
 	add_special MapRadio
 	add_special UnownPuzzle
 	add_special SlotMachine
@@ -115,11 +110,9 @@ SpecialsPointers::
 	add_special ProfOaksPCBoot
 	add_special GameboyCheck
 	add_special TrainerHouse
-	add_special PhotoStudio
 	add_special InitRoamMons
 	add_special FadeOutMusic
 	add_special Diploma
-	add_special PrintDiploma
 
 ; Crystal only
 	add_special Function11ac3e
