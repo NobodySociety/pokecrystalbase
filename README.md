@@ -15,3 +15,5 @@ A base rom for me to use.
 # Features from Tutorials:
 
 * Fourth Stats Page
+* Physical/Special Split
+* Remove the 25% failure chance for AI status moves
