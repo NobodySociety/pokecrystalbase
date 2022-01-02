@@ -377,6 +377,7 @@ StatsScreen_JoypadAction:
 .d_left
 	ld a, c
 	dec c
+	and a ; cp PINK_PAGE ; first page
 	jr nz, .set_page
 	ld c, ORANGE_PAGE ; last page
 	jr .set_page
@@ -741,6 +742,7 @@ LoadGreenPage:
 
 LoadBluePage:
 	call .PlaceOTInfo
+	call .PrintHappiness
 	hlcoord 10, 8
 	ld de, SCREEN_WIDTH
 	ld b, 10
@@ -792,6 +794,16 @@ LoadBluePage:
 	dw wOTPartyMonOTs
 	dw sBoxMonOTs
 	dw wBufferMonOT
+
+.PrintHappiness:
+	ld de, HappinessString
+	hlcoord 0, 15
+	call PlaceString
+	hlcoord 5, 16
+	lb bc, PRINTNUM_LEFTALIGN | 1, 3
+	ld de, wTempMonHappiness
+	call PrintNum
+	ret	
 
 LoadOrangePage:
 	call .placeCaughtLocation
@@ -886,6 +898,9 @@ IDNoString:
 
 OTString:
 	db "OT/@"
+	
+HappinessString:
+	db "Happy/@"	
 
 StatsScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
