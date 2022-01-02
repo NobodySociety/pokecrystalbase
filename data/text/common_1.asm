@@ -1116,6 +1116,15 @@ _RepelWoreOffText::
 	text "Repel's effect"
 	line "wore off."
 	done
+	
+_UseAnotherRepelText::
+	text "@"
+	text_ram wStringBuffer3
+	text "'s"
+	line "wore off."
+
+	para "Use another?"
+	done	
 
 _PlayerFoundItemText::
 	text "<PLAYER> found"

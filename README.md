@@ -19,3 +19,4 @@ A base rom for me to use.
 * Remove the 25% failure chance for AI status moves
 * Don't gain experience at level 100
 * Running Shoes
+* Automatically reuse Repel
