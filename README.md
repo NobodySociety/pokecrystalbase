@@ -26,3 +26,4 @@ A base rom for me to use.
 * Remove the artificial save delay
 * Modify existing gender formula
 * Reduce the command queue system to just stone tables
+* Lose money proportional to badges and level
