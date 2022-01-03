@@ -631,9 +631,9 @@ INCLUDE "data/moves/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
 
 
-SECTION "Print Party", ROMX
+SECTION "Battle Weather Images", ROMX
 
-; This is now empty
+INCLUDE "gfx/weather_images.asm"
 
 
 SECTION "bank77", ROMX

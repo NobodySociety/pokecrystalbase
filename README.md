@@ -28,3 +28,4 @@ A base rom for me to use.
 * Reduce the command queue system to just stone tables
 * Lose money proportional to badges and level
 * Survive poisoning with 1 HP
+* Show an icon for the current weather
