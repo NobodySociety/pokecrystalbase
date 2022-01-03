@@ -21,3 +21,4 @@ A base rom for me to use.
 * Running Shoes
 * Automatically reuse Repel
 * Show the tops of leaders heads on the trainer card
+* Correct grammar for plural trainers like Twins
