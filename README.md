@@ -32,3 +32,4 @@ A base rom for me to use.
 * Gain experience from catching Pokémon
 * Use unique colors for each thrown Poké Ball
 * Smashing rocks has a chance to contain items
+* How To Add a Pocket PC
