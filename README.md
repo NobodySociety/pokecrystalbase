@@ -33,3 +33,4 @@ A base rom for me to use.
 * Use unique colors for each thrown Poké Ball
 * Smashing rocks has a chance to contain items
 * How To Add a Pocket PC
+* Color party menu icons by species
