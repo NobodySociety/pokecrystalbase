@@ -31,3 +31,4 @@ A base rom for me to use.
 * Show an icon for the current weather
 * Gain experience from catching Pokémon
 * Use unique colors for each thrown Poké Ball
+* Smashing rocks has a chance to contain items
