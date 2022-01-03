@@ -22,3 +22,4 @@ A base rom for me to use.
 * Automatically reuse Repel
 * Show the tops of leaders heads on the trainer card
 * Correct grammar for plural trainers like Twins
+* Short beeping noise for low HP
