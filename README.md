@@ -25,3 +25,4 @@ A base rom for me to use.
 * Short beeping noise for low HP
 * Remove the artificial save delay
 * Modify existing gender formula
+* Reduce the command queue system to just stone tables

@@ -103,7 +103,7 @@ EnterMap:
 HandleMap:
 	call ResetOverworldDelay
 	call HandleMapTimeAndJoypad
-	farcall HandleCmdQueue ; no need to farcall
+	call HandleStoneTable
 	call MapEvents
 
 ; Not immediately entering a connected map will cause problems.
