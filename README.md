@@ -27,3 +27,4 @@ A base rom for me to use.
 * Modify existing gender formula
 * Reduce the command queue system to just stone tables
 * Lose money proportional to badges and level
+* Survive poisoning with 1 HP
