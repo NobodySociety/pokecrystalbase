@@ -30,3 +30,4 @@ A base rom for me to use.
 * Survive poisoning with 1 HP
 * Show an icon for the current weather
 * Gain experience from catching Pokémon
+* Use unique colors for each thrown Poké Ball
