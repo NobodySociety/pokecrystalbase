@@ -20,3 +20,4 @@ A base rom for me to use.
 * Don't gain experience at level 100
 * Running Shoes
 * Automatically reuse Repel
+* Show the tops of leaders heads on the trainer card
