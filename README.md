@@ -29,3 +29,4 @@ A base rom for me to use.
 * Lose money proportional to badges and level
 * Survive poisoning with 1 HP
 * Show an icon for the current weather
+* Gain experience from catching Pokémon
