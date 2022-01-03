@@ -24,3 +24,4 @@ A base rom for me to use.
 * Correct grammar for plural trainers like Twins
 * Short beeping noise for low HP
 * Remove the artificial save delay
+* Modify existing gender formula
