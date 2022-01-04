@@ -34,3 +34,4 @@ A base rom for me to use.
 * Smashing rocks has a chance to contain items
 * How To Add a Pocket PC
 * Color party menu icons by species
+* Add Unique Party Icons for All Pokémon
