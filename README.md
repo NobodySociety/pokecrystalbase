@@ -36,3 +36,4 @@ A base rom for me to use.
 * Color party menu icons by species
 * Add Unique Party Icons for All Pokémon
 * Expand tilesets from 192 to 255 tiles
+* Allow more than 15 object_events per map
