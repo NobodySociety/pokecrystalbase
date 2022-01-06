@@ -38,3 +38,4 @@ A base rom for me to use.
 * Expand tilesets from 192 to 255 tiles
 * Allow more than 15 object_events per map
 * Improve the outdoor sprite system
+* Improve the event initialization system
