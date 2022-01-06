@@ -39,3 +39,4 @@ A base rom for me to use.
 * Allow more than 15 object_events per map
 * Improve the outdoor sprite system
 * Improve the event initialization system
+* Make Sandstorm raise the Special Defense of Rock type Pokémon by 50%
