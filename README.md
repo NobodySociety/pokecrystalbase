@@ -41,3 +41,4 @@ A base rom for me to use.
 * Improve the event initialization system
 * Make Sandstorm raise the Special Defense of Rock type Pokémon by 50%
 * Grant Grass type Pokémon immunity to Powder Spore based moves
+* Make time and weather sensitive moves only weather dependent
