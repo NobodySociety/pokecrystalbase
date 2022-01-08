@@ -40,3 +40,4 @@ A base rom for me to use.
 * Improve the outdoor sprite system
 * Improve the event initialization system
 * Make Sandstorm raise the Special Defense of Rock type Pokémon by 50%
+* Grant Grass type Pokémon immunity to Powder Spore based moves
