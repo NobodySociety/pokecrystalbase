@@ -42,3 +42,4 @@ A base rom for me to use.
 * Make Sandstorm raise the Special Defense of Rock type Pokémon by 50%
 * Grant Grass type Pokémon immunity to Powder Spore based moves
 * Make time and weather sensitive moves only weather dependent
+* Disable jumping over ledges onto obstacle tiles or NPCs
